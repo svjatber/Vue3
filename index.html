@@ -17,16 +17,14 @@
       <h1>Vue Events</h1>
     </header>
     <section id="events">
-      <h2>Events in Action</h2>
-      <button @click="add(5)">Add</button>
-      <button @click="reduce(5)">Remove</button>
-      <input type="text" @input="setName($event, 'Bereziuk')" @keyup.enter="setConfirmedName">
-      <p>{{name}}</p>
-      <p v-once>{{confirmedName}}</p>
-      <p>Result: {{ counter }}</p>
-      <form @submit.prevent="submitForm">
-        <button type="submit">Submit</button>
-      </form>
+      <h2>Events Practise</h2>
+     <button @click="showAlert">Show Alert</button>
+      <hr>
+      <input type="text" @keydown="setOutput">
+      <p>{{output}}</p>
+      <hr>
+      <input type="text" @keydown.enter="output2 = $event.target.value">
+      <p>{{output2}}</p>
     </section>
   </body>
 </html>

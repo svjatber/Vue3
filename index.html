@@ -13,18 +13,20 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-  <div id="app">
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Events</h1>
     </header>
-    <section>
-      <h2>My Course Goal</h2>
-      <h2>{{name}}</h2>
-      <h2>{{age}}</h2>
-      <p>{{age + 5}}</p>
-      <img :src="img" alt="logo">
-      <input type="text" v-model="name">
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button @click="add(5)">Add</button>
+      <button @click="reduce(5)">Remove</button>
+      <input type="text" @input="setName($event, 'Bereziuk')" @keyup.enter="setConfirmedName">
+      <p>{{name}}</p>
+      <p v-once>{{confirmedName}}</p>
+      <p>Result: {{ counter }}</p>
+      <form @submit.prevent="submitForm">
+        <button type="submit">Submit</button>
+      </form>
     </section>
-  </div>
   </body>
 </html>

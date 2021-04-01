@@ -2,28 +2,18 @@
 const app = Vue.createApp({
     data(){
         return {
-            boxA: false,
-            boxB: false,
-            boxC: false
+            goals: ['Finish the course'],
+            enteredGoalValue: ''
         }
     },
-    computed:{
-      classBoxA(){
-          return {active: this.boxA}
-      }
-    },
     methods:{
-        boxSelected(str){
-            if(str === 'A'){
-                this.boxA = true
-                console.log('a')
-            }else if(str === 'B'){
-                this.boxB = true
-            }else if(str === 'C'){
-                this.boxC = true
-            }
+        addGoal(){
+            this.goals.push(this.enteredGoalValue)
+        },
+        removeGoal(idx){
+            this.goals.splice(idx, 1)
         }
     }
 })
 
-app.mount('#events')
+app.mount('#user-goals')

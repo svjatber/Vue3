@@ -7,10 +7,29 @@ const app = Vue.createApp({
          confirmedName:'svj'
         }
     },
+    watch:{
+        name(value){
+            console.log('Running again')
+            if(value === ''){
+                this.counter = 2
+            }else{
+                this.counter = 5
+            }
+        }
+    },
+    // computed:{
+    //     fullName(){
+    //         console.log('Running again')
+    //         if(this.name === ''){
+    //             return ''
+    //         }
+    //         return this.name + '' + 'Sch'
+    //     }
+    // },
     methods:{
-        setConfirmedName(){
-            this.confirmedName = this.name
-        },
+        // setConfirmedName(){
+        //     this.confirmedName = this.name
+        // },
         submitForm(){
            alert('Submitted')
         },

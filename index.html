@@ -17,24 +17,15 @@
       <h1>Vue Course Goals</h1>
     </header>
     <section id="user-goals">
-      <h2>My course goals</h2>
-      <input type="text" />
-      <button>Add Goal</button>
-      <p>No goals have been added yet - please start adding some!</p>
-      <input  type="text" v-model="enteredGoalValue" @keydown.enter="addGoal">
-      <button  @click="addGoal" >add</button>
-      <ul>
-        <li v-for="(goal, index) of goals" :key="index" @click="removeGoal(index)">
-          <p>{{goal}} - {{index}}</p>
-          <input type="text" @click.stop>
-        </li>
+      <input type="text" v-model="goalValue">
+      <button @click="addGoal">Add</button>
+      <ul v-if="showList">
+        <li v-for="(goal, index) in goals">{{index}} - {{goal}}</li>
       </ul>
 
-      <ul>
-        <li v-for="num in 10">{{num}}</li>
-      </ul>
-
-      <p v-show="goals.length > 1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eius enim est ipsa laborum nostrum possimus reiciendis, reprehenderit sed totam? Ad architecto deserunt dolores est voluptate. Blanditiis fugiat ullam voluptate.</p>
+      <button @click="showList = !showList">
+        {{showList ? 'Hide' : 'Show'}}
+      </button>
     </section>
   </body>
 </html>

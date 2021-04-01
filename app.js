@@ -2,16 +2,19 @@
 const app = Vue.createApp({
     data(){
         return {
-            goals: ['Finish the course'],
-            enteredGoalValue: ''
+            goals: [],
+            goalValue: '',
+            showList: true,
+            name: ''
         }
     },
     methods:{
         addGoal(){
-            this.goals.push(this.enteredGoalValue)
-        },
-        removeGoal(idx){
-            this.goals.splice(idx, 1)
+            if(!this.goals.includes(this.goalValue)){
+                this.goals.push(this.goalValue)
+                return
+            }
+
         }
     }
 })

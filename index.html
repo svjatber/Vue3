@@ -14,18 +14,16 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Behind The Scenes</h1>
     </header>
-    <section id="user-goals">
-      <input type="text" v-model="goalValue">
-      <button @click="addGoal">Add</button>
-      <ul v-if="showList">
-        <li v-for="(goal, index) in goals">{{index}} - {{goal}}</li>
-      </ul>
-
-      <button @click="showList = !showList">
-        {{showList ? 'Hide' : 'Show'}}
-      </button>
+    <section id="app">
+      <h2>How Vue Works</h2>
+      <input type="text" @input="saveInput" ref="userText">
+      <button @click="setText">Set Text</button>
+      <p>{{ message }}</p>
     </section>
+    <div id="app2">
+      {{message}}
+    </div>
   </body>
 </html>

@@ -76,3 +76,9 @@ header {
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
+
+.active{
+  border-color: red;
+  background-color: salmon;
+
+}

@@ -17,16 +17,13 @@
       <h1>Vue Events</h1>
     </header>
     <section id="events">
-      <h2>Events in Action</h2>
-      <button @click="add(5)">Add</button>
-      <button @click="reduce(5)">Remove</button>
-      <input type="text" v-model="name" >
-      <p>{{name}}</p>
-      <p>{{confirmedName}}</p>
-      <p>Result: {{ counter }}</p>
-      <form @submit.prevent="submitForm">
-        <button type="submit">Submit</button>
-      </form>
+      <div @click="boxSelected('A')"
+            :class="classBoxA"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae commodi, cum debitis dicta dolores eius error exercitationem fugiat ipsa laudantium magnam nisi officiis placeat totam vel veniam voluptatibus? Dicta.</div>
+      <div @click="boxSelected('B')"
+           :class="[{active: boxB}]"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae commodi, cum debitis dicta dolores eius error exercitationem fugiat ipsa laudantium magnam nisi officiis placeat totam vel veniam voluptatibus? Dicta.</div>
+
     </section>
   </body>
 </html>

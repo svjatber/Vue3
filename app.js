@@ -2,45 +2,26 @@
 const app = Vue.createApp({
     data(){
         return {
-         counter: 0,
-         name: '',
-         confirmedName:'svj'
+            boxA: false,
+            boxB: false,
+            boxC: false
         }
     },
-    watch:{
-        name(value){
-            console.log('Running again')
-            if(value === ''){
-                this.counter = 2
-            }else{
-                this.counter = 5
-            }
-        }
+    computed:{
+      classBoxA(){
+          return {active: this.boxA}
+      }
     },
-    // computed:{
-    //     fullName(){
-    //         console.log('Running again')
-    //         if(this.name === ''){
-    //             return ''
-    //         }
-    //         return this.name + '' + 'Sch'
-    //     }
-    // },
     methods:{
-        // setConfirmedName(){
-        //     this.confirmedName = this.name
-        // },
-        submitForm(){
-           alert('Submitted')
-        },
-        add(num){
-            this.counter += num
-        },
-        reduce(num){
-            this.counter -= num
-        },
-        setName(event, lastName){
-            this.name = event.target.value + ' ' + lastName
+        boxSelected(str){
+            if(str === 'A'){
+                this.boxA = true
+                console.log('a')
+            }else if(str === 'B'){
+                this.boxB = true
+            }else if(str === 'C'){
+                this.boxC = true
+            }
         }
     }
 })
